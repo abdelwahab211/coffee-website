@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid px-3">
+            <a class="navbar-brand" href="#home">Coffee Shop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cart">Cart <span class="badge bg-warning text-dark ms-1" id="cartCount">0</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="page-section coffee d-flex align-items-center">
+        <div class="hero-overlay w-100">
+            <div class="container text-center text-light py-5">
+                <h1 class="display-5 fw-bold">Welcome to Coffee Shop</h1>
+                <p class="lead mt-3">Discover premium coffee blends, stylish accessories, and fast delivery directly to your home.</p>
+                <a href="#products" class="btn btn-outline-light btn-lg mt-3">Explore Products</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Featured Products</h2>
+                <p>Handpicked favorites to start your coffee journey with the best flavors.</p>
+            </div>
+            <div class="row g-4" id="featuredGrid">
+                <!-- Featured products rendered by JS -->
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="page-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Products</h2>
+                <p>Browse all coffee items and add your favorites to the cart.</p>
+            </div>
+            <div class="row g-4" id="productsGrid"></div>
+        </div>
+    </section>
+
+    <section id="about" class="page-section bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">About Us</h2>
+                <p>We are a boutique coffee shop focused on quality, convenience, and handcrafted flavor delivered to your door.</p>
+            </div>
+            <div class="row align-items-center gx-4">
+                <div class="col-lg-6">
+                    <div class="card p-4 h-100">
+                        <h5>Our Story</h5>
+                        <p>From small-batch roasting to curated coffee gift sets, we make every cup a special experience.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card p-4 h-100">
+                        <h5>Why Choose Us</h5>
+                        <ul class="list-unstyled mt-3">
+                            <li>• Freshly roasted beans</li>
+                            <li>• Fast shipping</li>
+                            <li>• Support for coffee lovers and gift buyers</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="page-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Contact Us</h2>
+                <p>Get in touch for questions, orders, or coffee recommendations.</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card p-4">
+                        <div class="row">
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <h5>Email</h5>
+                                <p>support@coffee-shop.com</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>Phone</h5>
+                                <p>+1 234 567 890</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <h5>Address</h5>
+                            <p>123 Coffee Street, City Center, USA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cart" class="page-section bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Your Cart</h2>
+                <p>Review your selected products and place a quick checkout.</p>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card cart-card p-4">
+                        <div class="card-body">
+                            <div id="cartItems" class="cart-items mb-3"></div>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="fw-semibold">Total:</span>
+                                <span id="cartTotal" class="fs-4 fw-bold">$0.00</span>
+                            </div>
+                            <div class="d-flex flex-column flex-sm-row gap-3">
+                                <button id="checkoutBtn" class="btn btn-dark">Checkout</button>
+                                <button id="clearCartBtn" class="btn btn-outline-dark">Clear Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer text-center">
+        <div class="container">
+            <p class="mb-0">© 2026 Coffee Shop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script>
+        const products = [
+            { id: 1, name: 'Arabica Beans', price: 15, description: 'Smooth, rich beans roasted to perfection.', tag: 'Best Seller' },
+            { id: 2, name: 'Espresso Pack', price: 12, description: 'Strong and bold blend for espresso lovers.', tag: 'New' },
+            { id: 3, name: 'Latte Blend', price: 18, description: 'Creamy and mellow mix for milk-based drinks.', tag: 'Popular' },
+            { id: 4, name: 'Mocha Gift Set', price: 22, description: 'Gift-ready set with coffee and chocolate syrup.', tag: 'Limited' }
+        ];
+
+        const cartKey = 'coffeeCart';
+        const getCart = () => JSON.parse(localStorage.getItem(cartKey) || '[]');
+        const saveCart = (cart) => localStorage.setItem(cartKey, JSON.stringify(cart));
+        const formatPrice = (value) => `$${value.toFixed(2)}`;
+
+        const updateCartCount = () => {
+            const countElement = document.getElementById('cartCount');
+            const cart = getCart();
+            const totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
+            countElement.textContent = totalQty;
+        };
+
+        const renderFeatured = () => {
+            const featuredGrid = document.getElementById('featuredGrid');
+            featuredGrid.innerHTML = products.slice(0, 3).map(product => `
+                <div class="col-md-4">
+                    <div class="card menu-card h-100 p-4 text-center">
+                        <span class="badge bg-dark text-light mb-3">${product.tag}</span>
+                        <h5>${product.name}</h5>
+                        <p class="text-muted">${product.description}</p>
+                        <span class="price">${formatPrice(product.price)}</span>
+                    </div>
+                </div>
+            `).join('');
+        };
+
+        const renderProducts = () => {
+            const productsGrid = document.getElementById('productsGrid');
+            productsGrid.innerHTML = products.map(product => `
+                <div class="col-md-6 col-lg-4">
+                    <div class="card menu-card h-100 p-4 d-flex flex-column">
+                        <span class="badge bg-secondary text-light mb-3 align-self-start">${product.tag}</span>
+                        <h5>${product.name}</h5>
+                        <p class="text-muted">${product.description}</p>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <span class="price">${formatPrice(product.price)}</span>
+                            <button class="btn btn-dark btn-sm add-to-cart" data-id="${product.id}">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        };
+
+        const renderCart = () => {
+            const cartItems = document.getElementById('cartItems');
+            const cartTotal = document.getElementById('cartTotal');
+            const cart = getCart();
+
+            if (!cart.length) {
+                cartItems.innerHTML = '<p class="text-muted mb-0">Your cart is empty. Add products from the Products page.</p>';
+                cartTotal.textContent = formatPrice(0);
+                updateCartCount();
+                return;
+            }
+
+            let total = 0;
+            cartItems.innerHTML = cart.map(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                return `
+                    <div class="cart-item d-flex justify-content-between align-items-center mb-3">
+                        <div>
+                            <div class="fw-semibold">${item.name}</div>
+                            <div class="text-muted small">${item.quantity} x ${formatPrice(item.price)}</div>
+                        </div>
+                        <div class="text-end fw-semibold">${formatPrice(itemTotal)}</div>
+                    </div>
+                `;
+            }).join('');
+
+            cartTotal.textContent = formatPrice(total);
+            updateCartCount();
+        };
+
+        const addToCart = (productId) => {
+            const product = products.find(item => item.id === productId);
+            if (!product) return;
+            const cart = getCart();
+            const existing = cart.find(item => item.id === product.id);
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                cart.push({ id: product.id, name: product.name, price: product.price, quantity: 1 });
+            }
+            saveCart(cart);
+            renderCart();
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderFeatured();
+            renderProducts();
+            renderCart();
+
+            document.getElementById('productsGrid').addEventListener('click', (event) => {
+                if (event.target.classList.contains('add-to-cart')) {
+                    const productId = Number(event.target.dataset.id);
+                    addToCart(productId);
+                    event.target.textContent = 'Added';
+                    setTimeout(() => event.target.textContent = 'Add to Cart', 800);
+                }
+            });
+
+            document.getElementById('clearCartBtn').addEventListener('click', () => {
+                localStorage.removeItem(cartKey);
+                renderCart();
+            });
+
+            document.getElementById('checkoutBtn').addEventListener('click', () => {
+                const cart = getCart();
+                if (!cart.length) {
+                    alert('Your cart is empty. Add items first.');
+                    return;
+                }
+                const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+                alert(`Checkout complete! Order total: ${formatPrice(total)}`);
+                localStorage.removeItem(cartKey);
+                renderCart();
+            });
+        });
+    </script>
+</body>
+
+</html>

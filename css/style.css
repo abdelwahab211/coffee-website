@@ -1,0 +1,160 @@
+body {
+    background: #f8f3ef;
+    color: #3a2b24;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    /* padding-top: 72px; */
+}
+
+.navbar {
+    background: #3a2b24;
+}
+
+@media (max-width: 768px) {
+    .page-section {
+        padding: 60px 0;
+    }
+
+    .hero-overlay {
+        padding: 80px 0;
+    }
+
+    .cart-card {
+        min-height: auto;
+    }
+
+    .cart-items {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand,
+    .nav-link {
+        font-size: 0.95rem !important;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .price {
+        display: block;
+        margin-top: 0.75rem;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+.navbar-brand,
+.nav-link {
+    color: #fff !important;
+}
+
+.nav-link:hover {
+    color: #f8f3ef !important;
+}
+
+.coffee {
+    background-image: url(../imgs/main.jpg);
+    min-height: 420px;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.35);
+    min-height: 670px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: "";
+    width: 70px;
+    height: 3px;
+    background: #b35c31;
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+.card {
+    border: none;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.menu-card,
+.contact-card,
+.about-card {
+    transition: transform 0.25s ease;
+}
+
+.menu-card:hover,
+.contact-card:hover,
+.about-card:hover {
+    transform: translateY(-6px);
+}
+
+.cart-card {
+    min-height: 360px;
+    background: #fff;
+    border-radius: 18px;
+}
+
+.cart-items {
+    min-height: 130px;
+}
+
+.cart-item {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.75rem;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.price {
+    display: inline-block;
+    margin-top: 1rem;
+    font-weight: 700;
+    color: #9b5d34;
+}
+
+.footer {
+    background: #3a2b24;
+    color: #fff;
+    padding: 30px 0;
+}
+
+.contact-list li {
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+}
+
+.btn-outline-light {
+    border-color: #f8f3ef;
+}
+
+.btn-outline-light:hover {
+    background: #f8f3ef;
+    color: #3a2b24;
+}
